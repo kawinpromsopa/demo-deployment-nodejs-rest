@@ -45,7 +45,7 @@ AWS Account
 
 * Forked [demo-nodejs-mongodb-rest](https://github.com/CleverCloud/demo-nodejs-mongodb-rest)
   - Also I'm already have builded docker container and pushed on Dockerhub registry.
-  - Probably could reviews for How to automated `build` and `deploy` on my forked repo: [kawinpromsopa/demo-nodejs-mongodb-rest](https://github.com/kawinpromsopa/demo-deployment-nodejs-rest)
+  - Probably you could reviews for How to automated `build` and `deploy` on my forked repo: [kawinpromsopa/demo-nodejs-mongodb-rest](https://github.com/kawinpromsopa/demo-nodejs-mongodb-rest)
 
 ## Stages Environment
 
@@ -78,10 +78,10 @@ $ packer build ubuntu16_base_image.json
 ```
 <img width="684" alt="Screen Shot 2563-04-04 at 18 57 48" src="https://user-images.githubusercontent.com/44109187/78508611-58726f00-77b2-11ea-95b5-3becccd65e8f.png">
 
-Step 4). After received the `AMI_ID`, Please enter value to file `main.tf`, at path `./demo-nodejs-deployment/terraform/demo-nodejs-mongodb-rest/staging/main.tf` in line : 9, For example:
+Step 4). After received the `AMI_ID`, Please enter value to file `main.tf`, at path `./demo-nodejs-deployment/terraform/demo-nodejs-mongodb-rest/staging/main.tf` in line : 10, For example:
 
 ```
-app_image = "ami-xxxxxxx"
+base_ami = "ami-xxxxxxx"
 ```
 
 ### Terraform
