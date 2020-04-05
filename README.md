@@ -91,23 +91,16 @@ Step 5). Initial terraform modules, at path `./demo-nodejs-deployment/terraform/
 ```
 $ terraform init
 ```
-<img width="684" alt="Screen Shot 2563-04-04 at 18 57 48" src="https://user-images.githubusercontent.com/44109187/78508709-31686d00-77b3-11ea-90a2-71d59b7824b1.png">
+<img width="737" alt="Screen Shot 2563-04-06 at 03 03 14" src="https://user-images.githubusercontent.com/44109187/78509003-1a2a7f00-77b5-11ea-8842-21fbb6c66923.png">
 
 Step 6). Run `terraform apply` and then resource will be create 14 resources and enter `yes` to comfirm to deployment following command:
 * Note: Processing deployment take time around few mins.
 ```
 $ terraform apply
 ```
-<img width="684" alt="Screen Shot 2563-04-04 at 18 57 48" src="https://user-images.githubusercontent.com/44109187/78508753-75f40880-77b3-11ea-9162-0ae3793ebfdb.png">
+<img width="662" alt="Screen Shot 2563-04-06 at 03 05 04" src="https://user-images.githubusercontent.com/44109187/78509056-7ab9bc00-77b5-11ea-96cc-9f7d866ef92f.png">
 
-Step 7). Wait until terraform created and send output value in `output-ip-address-of-aws-ec2.text` file, Then show the result in file with:
-
-```
-$ more output-name-of-aws-alb.text
-```
-![Screen Shot 2562-07-30 at 16 06 24](https://user-images.githubusercontent.com/44109187/62116646-b4f8c280-b2e4-11e9-93f6-f7d14605bcea.png)
-
-Step 8). Copy the DNS_NAME value in file, Enter in your web browser, and enjoy!
+Step 7). Copy the DNS_NAME value in file, Enter in your web browser, and enjoy!
 
 <img width="1680" alt="Screen Shot 2562-07-30 at 16 06 59" src="https://user-images.githubusercontent.com/44109187/62116700-d063cd80-b2e4-11e9-9f8b-b2462dea5a54.png">
 
@@ -116,8 +109,7 @@ Step 9). Run `terraform destroy` to delete everything created by terraform, ente
 ```
 $ terraform destroy
 ```
-![Screen Shot 2562-07-30 at 16 08 20](https://user-images.githubusercontent.com/44109187/62116881-2769a280-b2e5-11e9-99f1-7661f8b76158.png)
 
-## Developing application design for CI/CD
+## Development application designs for CI/CD
 
 With continuous integration and continuous deployment I using Jenkins written pipeline as a code workflow: `Build`, `Push images to registry`, `Deployment stages` by separate `environment values` and `configuration of resource systems` with terraform workspace or directory enivonment, like deployed example this. And also these architecture infrastructure supported blue/green deployment
