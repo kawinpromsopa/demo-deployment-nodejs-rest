@@ -44,8 +44,8 @@ AWS Account
 ## Build Application
 
 * Forked [demo-nodejs-mongodb-rest](https://github.com/CleverCloud/demo-nodejs-mongodb-rest)
-  - I'm also have already builded docker containers and pushed on Docker hub registry.
-  - [BONUS] Probably you can reviews for How to automated `build` and `deploy` on my forked repo: [kawinpromsopa/demo-nodejs-mongodb-rest](https://github.com/kawinpromsopa/demo-deployment-nodejs-rest)
+  - Also I'm already have builded docker container and pushed on Dockerhub registry.
+  - Probably could reviews for How to automated `build` and `deploy` on my forked repo: [kawinpromsopa/demo-nodejs-mongodb-rest](https://github.com/kawinpromsopa/demo-deployment-nodejs-rest)
 
 ## Stages Environment
 
@@ -91,14 +91,14 @@ Step 5). Initial terraform modules, at path `./demo-nodejs-deployment/terraform/
 ```
 $ terraform init
 ```
-![Screen Shot 2562-07-30 at 15 54 34](https://user-images.githubusercontent.com/44109187/62115300-6c400a00-b2e2-11e9-8e8a-02000f0adf82.png)
+<img width="684" alt="Screen Shot 2563-04-04 at 18 57 48" src="https://user-images.githubusercontent.com/44109187/78508709-31686d00-77b3-11ea-90a2-71d59b7824b1.png">
 
-Step 6). Run `terraform apply` and then resource will be create resources and enter `yes` to comfirm to deployment following command:
+Step 6). Run `terraform apply` and then resource will be create 14 resources and enter `yes` to comfirm to deployment following command:
 * Note: Processing deployment take time around few mins.
 ```
 $ terraform apply
 ```
-![terraform apply](https://user-images.githubusercontent.com/44109187/62114650-4fef9d80-b2e1-11e9-8018-4654572ef661.png)
+<img width="684" alt="Screen Shot 2563-04-04 at 18 57 48" src="https://user-images.githubusercontent.com/44109187/78508753-75f40880-77b3-11ea-9162-0ae3793ebfdb.png">
 
 Step 7). Wait until terraform created and send output value in `output-ip-address-of-aws-ec2.text` file, Then show the result in file with:
 
@@ -106,7 +106,6 @@ Step 7). Wait until terraform created and send output value in `output-ip-addres
 $ more output-name-of-aws-alb.text
 ```
 ![Screen Shot 2562-07-30 at 16 06 24](https://user-images.githubusercontent.com/44109187/62116646-b4f8c280-b2e4-11e9-93f6-f7d14605bcea.png)
-
 
 Step 8). Copy the DNS_NAME value in file, Enter in your web browser, and enjoy!
 
