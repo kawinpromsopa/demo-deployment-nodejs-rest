@@ -11,6 +11,14 @@ The results will be create:
 
 * Compute
     - Elastic Compute Cloud (EC2)
+      - 1). Application Server
+        - Demo nodejs running on base docekr container
+        - Jenkins server running on base docekr container
+      - 2). Database Server 
+        - Mongodb running on base docekr container
+
+* Amazon Machine Images (AMI)
+      - Ubuntu xenial 16.04
 
 * Security Group
     - Allow HTTP/HTTPS for `Application Server`.
