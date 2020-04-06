@@ -93,16 +93,18 @@ $ terraform init
 ```
 <img width="737" alt="Screen Shot 2563-04-06 at 03 03 14" src="https://user-images.githubusercontent.com/44109187/78509003-1a2a7f00-77b5-11ea-8842-21fbb6c66923.png">
 
-Step 6). Run `terraform apply` and then resource will be create 14 resources and enter `yes` to comfirm to deployment following command:
+Step 6). Run `terraform apply` and then resource will be create 18 resources and enter `yes` to comfirm to deployment following command:
 * Note: Processing deployment take time around few mins.
 ```
 $ terraform apply
 ```
 <img width="662" alt="Screen Shot 2563-04-06 at 03 05 04" src="https://user-images.githubusercontent.com/44109187/78509056-7ab9bc00-77b5-11ea-96cc-9f7d866ef92f.png">
 
-Step 7). Copy the `Endpoint` value on display output and Enter that value in your web browser. Let's see the result!
+Step 7). Copy the `Endpoint` value shown on display output and Enter that in your web browser. So, Let's see the result!
 
 <img width="604" alt="Screen Shot 2563-04-06 at 22 01 24" src="https://user-images.githubusercontent.com/44109187/78572866-36c8c480-7852-11ea-9a59-501618a8331d.png">
+
+<img width="1680" alt="Screen Shot 2563-04-06 at 21 57 35" src="https://user-images.githubusercontent.com/44109187/78573329-cff7db00-7852-11ea-86c0-edab92f4d610.png">
 
 Step 9). Run `terraform destroy` to delete everything created by terraform, enter `yes` to comfirm to destroy following command:
 
@@ -110,6 +112,10 @@ Step 9). Run `terraform destroy` to delete everything created by terraform, ente
 $ terraform destroy
 ```
 
-## Development application designs for CI/CD
+<img width="765" alt="Screen Shot 2563-04-06 at 22 06 28" src="https://user-images.githubusercontent.com/44109187/78573401-e6059b80-7852-11ea-8e13-13e66cddd5aa.png">
 
-With continuous integration and continuous deployment I using Jenkins written pipeline as a code workflow: `Build`, `Push images to registry`, `Deployment stages` by separate `environment values` and `configuration of resource systems` with terraform workspace or directory enivonment, like deployed example this. And also these architecture infrastructure supported blue/green deployment
+## [BONUS] Automated deployment application designed for CI/CD
+
+With continuous integration and continuous deployment, I using Jenkins written multiple pipeline for: `Build`, `Push images to registry`, `Deployment stages`.
+On the application repository that has somefile called `Dockerfile` for Automated building and `Jenkinsfile` for Automated deployment stages.
+Could you see a further information on my forked repo: [kawinpromsopa/demo-nodejs-mongodb-rest](https://github.com/kawinpromsopa/demo-nodejs-mongodb-rest)
