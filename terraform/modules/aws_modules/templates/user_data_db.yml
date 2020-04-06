@@ -1,0 +1,56 @@
+#cloud-config #swapfile setup
+hostname: ${prefix_name}-${name}-db
+manage_etc_hosts: localhost
+swap:
+  filename: /swapfile
+  size: "auto"
+  maxsize: 4000000000
+runcmd:
+  - [ chown, "ubuntu:ubuntu", /home/ubuntu/db ]
+  - [ systemctl, enable, db ]
+  - [ systemctl, start, db ]
+write_files:
+  - path: /home/ubuntu/.aws/config
+    owner: ubuntu:ubuntu
+    permissions: '0600'
+    content: |
+      [default]
+      region = ${region}
+  - path: /home/ubuntu/composeup
+    owner: ubuntu:ubuntu
+    permissions: '0755'
+    content: |
+      #!/bin/bash
+      set -xe
+      docker-compose -f /home/ubuntu/db/docker-compose.yml up -d
+  - path: /etc/systemd/system/db.service
+    content: |
+      [Unit]
+      Description=db
+      After=docker.service
+      Requires=docker.service
+      [Service]
+      User=ubuntu
+      WorkingDirectory=/home/ubuntu/db
+      Type=oneshot
+      ExecStart=/home/ubuntu/composeup
+      ExecStop=/usr/local/bin/docker-compose stop
+      RemainAfterExit=true
+      StandardOutput=journal
+      [Install]
+      WantedBy=multi-user.target
+  - path: /home/ubuntu/db/docker-compose.yml
+    owner: ubuntu:ubuntu
+    content: |
+      version: '3'
+      services:
+        db:
+          restart: always
+          image: mongo:3.6.17-xenial
+          ports:
+            - 27017:27017
+          restart: unless-stopped
+          logging:
+            options:
+              max-size: 10m
+              max-file: '10'
