@@ -100,9 +100,9 @@ $ terraform apply
 ```
 <img width="662" alt="Screen Shot 2563-04-06 at 03 05 04" src="https://user-images.githubusercontent.com/44109187/78509056-7ab9bc00-77b5-11ea-96cc-9f7d866ef92f.png">
 
-Step 7). Copy the DNS_NAME value in file, Enter in your web browser, and enjoy!
+Step 7). Copy the `Endpoint` value on display output and Enter that value in your web browser. Let's see the result!
 
-<img width="1680" alt="Screen Shot 2562-07-30 at 16 06 59" src="https://user-images.githubusercontent.com/44109187/62116700-d063cd80-b2e4-11e9-9f8b-b2462dea5a54.png">
+<img width="604" alt="Screen Shot 2563-04-06 at 22 01 24" src="https://user-images.githubusercontent.com/44109187/78572866-36c8c480-7852-11ea-9a59-501618a8331d.png">
 
 Step 9). Run `terraform destroy` to delete everything created by terraform, enter `yes` to comfirm to destroy following command:
 
