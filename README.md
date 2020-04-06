@@ -2,19 +2,19 @@
 
 Provisioning infrastructure microservices application on Amazon Web Services with terraform!.
 
-![demo-nodejs-mongodb-rest](https://user-images.githubusercontent.com/44109187/78508240-62df3980-77af-11ea-8c6e-ebfde7d3be0e.png)
+![demo-nodejs-mongodb-rest (1)](https://user-images.githubusercontent.com/44109187/78571542-83ab9b80-7850-11ea-8116-54a142304435.png)
 
 The results will be create:
 
 * Network
-    - VPC Public subnet 3 Availability zone
+    - VPC Public subnet 3 Availability zone (AZs)
 
 * Compute
     - Elastic Compute Cloud (EC2)
 
 * Security Group
-    - Allow HTTP/HTTPS for Application Server.
-    - Allow remote access to Database server from Application Server.
+    - Allow HTTP/HTTPS for `Application Server`.
+    - Allow only internal remote access to connect `Database server`.
     - Allow secure shell
 
 ## Requirements
