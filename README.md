@@ -18,7 +18,7 @@ The results will be create:
         - Mongodb running on base docker container
 
 * Amazon Machine Images (AMI)
-      - Ubuntu xenial 16.04
+    - Ubuntu xenial 16.04
 
 * Security Group
     - Allow HTTP/HTTPS for `Application Server`.
